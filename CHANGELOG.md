@@ -17,6 +17,16 @@ Dates in this file will have the following format: MM/DD/YYYY
 - We could use Project Reactor to this project but this depends on how many requests by second in this API will have.
 - Using Project Reactor allows parallel thread execution. We need to use Mono/Flex and subscribe Monos to perform the cycle.
 
+## [0.3.0] - 03/09/2022 - Branch: feature/price-endpoint
+
+## Added
+- PriceController
+- Price endpoint with its parameters
+- PriceService
+- DTO to return in controller
+- Interface to use Service
+- Validate and process methods implementation will be created on in another branch
+
 ## [0.2.0] - 03/08/2022 - Branch: feature/adding-h2-dependencies-scripts
 
 ## Added
