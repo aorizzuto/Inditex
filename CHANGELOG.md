@@ -17,6 +17,22 @@ Dates in this file will have the following format: MM/DD/YYYY
 - We could use Project Reactor to this project but this depends on how many requests by second in this API will have.
 - Using Project Reactor allows parallel thread execution. We need to use Mono/Flex and subscribe Monos to perform the cycle.
 
+## [0.4.0] - 03/09/2022 - Branch: feature/adding-logic-endpoint
+
+## Added
+- Validators for input request.
+  - Date format validator
+  - Product validator if request has negative product Id
+  - Chain validator if request has negative branch Id
+- Image directory to show project functionality.
+  - database image
+  - success request image
+- Request params to controller
+- More logic in PriceConverter to convert records to response
+- Exception package created to handle exceptions
+- Logic with records in service to get final response. Search max priority record, find records in repository, convert records in response
+- Creation of query in repository to get the records that we are looking for
+
 ## [0.3.0] - 03/09/2022 - Branch: feature/price-endpoint
 
 ## Added

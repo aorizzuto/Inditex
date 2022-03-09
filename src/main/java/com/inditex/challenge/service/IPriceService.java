@@ -1,12 +1,11 @@
 package com.inditex.challenge.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.inditex.challenge.dto.PriceResultDTO;
-
-import java.util.List;
 
 public interface IPriceService {
 
-    void validate(String applyDate, Integer productId, Integer chainId);
+    void validate(String applyDate, Integer productId, Integer chainId) throws Exception;
 
-    List<PriceResultDTO> process(String applyDate, Integer productId, Integer chainId);
+    PriceResultDTO process(String applyDate, Integer productId, Integer chainId) throws JsonProcessingException;
 }
