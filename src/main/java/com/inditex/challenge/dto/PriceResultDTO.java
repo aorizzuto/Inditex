@@ -1,2 +1,4 @@
-package com.inditex.challenge.dto;public class PriceResultDTO {
+package com.inditex.challenge.dto;
+
+public class PriceResultDTO {
 }
