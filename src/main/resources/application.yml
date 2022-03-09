@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# This was used for debug but this configuration needs to be an argument when project is called
+# This alsa could be set in "run configuration" as a environment variable
+spring:
+  profiles:
+    active: local
