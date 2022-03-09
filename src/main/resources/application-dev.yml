@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3307/mytheresa
+    url: jdbc:mysql://localhost:3307/inditex
     username: root
     password: root
     driverClassName: mysqlDriver
