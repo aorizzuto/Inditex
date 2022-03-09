@@ -33,7 +33,7 @@ class InitConfig {
         if (environmentUtils.isLocal()) {
             logger.info("Saving prices from initial json file");
             List<PriceDTO> listOfPrices = new JsonUtils("initial-inserts.json").getListOfPrices();
-            List<Price> prices = PriceConverter.convert(listOfPrices);
+            List<Price> prices = PriceConverter.convertToEntity(listOfPrices);
 //            pricesRepository.saveAll(prices); // This is the second way to create initial inserts. 1st way in data.sql
         }
     }

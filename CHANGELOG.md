@@ -27,6 +27,10 @@ Dates in this file will have the following format: MM/DD/YYYY
 - Image directory to show project functionality.
   - database image
   - success request image
+- Request params to controller
+- More logic in PriceConverter to convert records to response
+- Exception package created to handle exceptions
+- Logic with records in service to get final response. Search max priority record, find records in repository, convert records in response
 - 
 
 ## [0.3.0] - 03/09/2022 - Branch: feature/price-endpoint
