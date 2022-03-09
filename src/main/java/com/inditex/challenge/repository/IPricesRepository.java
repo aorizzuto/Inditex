@@ -1,2 +1,10 @@
-package com.inditex.challenge.repository;public class IPricesRepository {
+package com.inditex.challenge.repository;
+
+import com.inditex.challenge.repository.model.Price;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IPricesRepository extends JpaRepository<Price, Long> {
 }
