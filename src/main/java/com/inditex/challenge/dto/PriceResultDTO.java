@@ -1,16 +1,14 @@
 package com.inditex.challenge.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class PriceResultDTO {
 
     @JsonProperty("product_id")

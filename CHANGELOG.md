@@ -18,6 +18,13 @@ Dates in this file will have the following format: MM/DD/YYYY
 - Using Project Reactor allows parallel thread execution. We need to use Mono/Flex and subscribe Monos to perform the cycle.
 
 ## [0.6.0] - 03/10/2022 - Branch: feature/tests
+## Added
+- Tests in Controller
+- Tests in Service
+- Tests in Validations
+- Use of @ParameterizedTest, @Test and @Sql
+- All working
+- Coverage Image --> 90% coverage
 
 ## [0.5.0] - 03/10/2022 - Branch: feature/handle-exceptions
 ## Added

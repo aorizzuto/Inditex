@@ -35,7 +35,6 @@ public class JsonUtils {
     }
 
     private List<PriceDTO> toListOfPrices() throws JsonProcessingException {
-        //return objectMapper.readValue(responseBody("prices"), new TypeReference<>() {});
         return Arrays.asList(objectMapper.readValue(responseBody("prices"), PriceDTO[].class));
     }
 
