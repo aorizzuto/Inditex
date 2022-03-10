@@ -17,6 +17,19 @@ Dates in this file will have the following format: MM/DD/YYYY
 - We could use Project Reactor to this project but this depends on how many requests by second in this API will have.
 - Using Project Reactor allows parallel thread execution. We need to use Mono/Flex and subscribe Monos to perform the cycle.
 
+## [0.6.0] - 03/10/2022 - Branch: feature/tests
+
+## [0.5.0] - 03/10/2022 - Branch: feature/handle-exceptions
+## Added
+- Image when exception occurs
+- Global exception handler to handle exceptions
+- ErrorCode file with all error messages
+- ResponseEntityBody is a class with the body to response in case of error
+
+## Modified
+- New image for success request
+- DateValidator with new formatter
+
 ## [0.4.0] - 03/09/2022 - Branch: feature/adding-logic-endpoint
 
 ## Added
