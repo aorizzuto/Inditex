@@ -1,6 +1,8 @@
 package com.inditex.challenge.validator;
 
 import com.inditex.challenge.exception.ErrorCode;
+import com.inditex.challenge.exception.business.BadDateFormatException;
+import com.inditex.challenge.exception.business.InvalidProductException;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -15,7 +17,7 @@ public class ValidatorTest {
             ChainValidator.validate(value);
         });
 
-        String expectedMessage = ErrorCode.NEGATIVE_ID;
+        String expectedMessage = ErrorCode.NEGATIVE_ID.getMessage();
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
@@ -24,11 +26,11 @@ public class ValidatorTest {
     @ParameterizedTest
     @ValueSource(ints = {-3, -20, -11, -1, -23453})
     public void WHEN_Product_Id_Is_Negative_THEN_Throw_Exception(Integer value) {
-        Exception exception = assertThrows(Exception.class, () -> {
+        InvalidProductException exception = assertThrows(InvalidProductException.class, () -> {
             ProductValidator.validate(value);
         });
 
-        String expectedMessage = ErrorCode.NEGATIVE_ID;
+        String expectedMessage = ErrorCode.NEGATIVE_ID.getMessage();
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
@@ -37,11 +39,11 @@ public class ValidatorTest {
     @ParameterizedTest
     @ValueSource(strings = {"2020/03/04", "2020-03-04", "03-04-2020-00.00", ""})
     public void WHEN_Date_Format_Is_Incorrect_THEN_Throw_Exception(String date) {
-        Exception exception = assertThrows(Exception.class, () -> {
+        BadDateFormatException exception = assertThrows(BadDateFormatException.class, () -> {
             DateValidator.validateFormat(date);
         });
 
-        String expectedMessage = ErrorCode.BAD_DATE_FORMAT;
+        String expectedMessage = ErrorCode.BAD_DATE_FORMAT.getMessage();
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));

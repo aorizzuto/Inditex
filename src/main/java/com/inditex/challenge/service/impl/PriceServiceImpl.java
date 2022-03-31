@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.inditex.challenge.converter.PriceConverter;
 import com.inditex.challenge.dto.PriceDTO;
 import com.inditex.challenge.dto.PriceResultDTO;
+import com.inditex.challenge.exception.business.BusinessException;
 import com.inditex.challenge.repository.IPricesRepository;
 import com.inditex.challenge.repository.model.Price;
 import com.inditex.challenge.service.IPriceService;
@@ -13,12 +14,20 @@ import com.inditex.challenge.validator.DateValidator;
 import com.inditex.challenge.validator.ProductValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Use @Qualifier annotation only in case we have multiple implementations of IPriceService interface
+ * It's not necessary if we have only one implementation
+ * I let @Qualifier annotation in here just to let you know I'm aware of the existence of it and its use
+ */
+
 @Service
+@Qualifier("priceServiceImpl")
 public class PriceServiceImpl implements IPriceService {
 
     IPricesRepository pricesRepository;
@@ -30,7 +39,7 @@ public class PriceServiceImpl implements IPriceService {
     }
 
     @Override
-    public void validate(String applyDate, Integer productId, Integer chainId) throws Exception {
+    public void validate(String applyDate, Integer productId, Integer chainId) throws BusinessException {
         logger.info("Validating request");
         DateValidator.validateFormat(applyDate);
         ProductValidator.validate(productId);

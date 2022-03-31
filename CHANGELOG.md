@@ -17,6 +17,33 @@ Dates in this file will have the following format: MM/DD/YYYY
 - We could use Project Reactor to this project but this depends on how many requests by second in this API will have.
 - Using Project Reactor allows parallel thread execution. We need to use Mono/Flex and subscribe Monos to perform the cycle.
 
+## [0.7.0] - 03/31/2022 - Branch: feature/fixes
+## Modified
+- Interface used to call service in Controller
+- ErrorCode was modified to be used as a Enum
+  - It is more organized to use it like that. We can handle both message and HttpStatus
+- GlobalExceptionHandler was modified to accept new ErrorCode structure and new exception custom classes.
+- Removing unused imports
+- Postman collection was fixed to use valid dates
+- Fix in tests to expect custom Exceptions
+
+## Added
+- Qualifier annotation used 
+  - Just to let you know I'm aware of the existence of it and its use.
+  - I know it is not obligatory to use when we have only one implementation of the interface
+- BusinessException created to handle exceptions related to business
+  - This exception works with ErrorCode instead of a String like Exception class
+  - This exception extends from Exception class
+- BadDateFormatException is a custom exception to handle all issues related to Dates in DateValidator
+  - It extends from BusinessException
+- InvalidBrandException is a custom exception to handle all issues related to Brands or Chain
+  - It extends from BusinessException
+- InvalidProductException is a custom exception to handle all issues related to Products
+  - It extends from BusinessException
+- Using new Custom Exceptions in validators
+
+## Modified
+
 ## [0.6.0] - 03/10/2022 - Branch: feature/tests
 ## Added
 - Tests in Controller
