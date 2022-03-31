@@ -13,7 +13,7 @@ public class ChainValidator {
         logger.info("Chain validation begin.");
 
         if (id < 0) {
-            logger.error("Exception while validating id: " + id);
+            logger.error("Invalid id: " + id);
             throw new InvalidBrandException(ErrorCode.NEGATIVE_ID);
         }
     }

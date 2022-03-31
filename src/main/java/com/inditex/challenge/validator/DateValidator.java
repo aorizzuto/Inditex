@@ -13,7 +13,7 @@ public class DateValidator {
 
     public static void validateFormat(String applyDate) throws BadDateFormatException {
 
-        logger.info("Chain validation begin.");
+        logger.info("Date validation begin.");
 
         SimpleDateFormat dateFormatterWithHHMMSS = new SimpleDateFormat("yyyy-MM-dd-HH.mm.ss");
 

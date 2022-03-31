@@ -44,7 +44,7 @@ public class PriceServiceImpl implements IPriceService {
         DateValidator.validateFormat(applyDate);
         ProductValidator.validate(productId);
         ChainValidator.validate(chainId);
-        logger.info("Validate success");
+        logger.info("Validation success");
     }
 
     @Override
