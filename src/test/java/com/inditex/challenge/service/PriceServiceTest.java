@@ -1,40 +1,25 @@
 package com.inditex.challenge.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.inditex.challenge.converter.PriceConverter;
 import com.inditex.challenge.dto.DatesToApply;
-import com.inditex.challenge.dto.PriceDTO;
 import com.inditex.challenge.dto.PriceResultDTO;
 import com.inditex.challenge.repository.IPricesRepository;
-import com.inditex.challenge.repository.model.Price;
 import com.inditex.challenge.service.impl.PriceServiceImpl;
-import com.inditex.challenge.utils.JsonUtils;
-import com.inditex.challenge.validator.ChainValidator;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
-import javax.persistence.EntityManager;
-import javax.sql.DataSource;
-import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.List;
-import java.util.Objects;
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest

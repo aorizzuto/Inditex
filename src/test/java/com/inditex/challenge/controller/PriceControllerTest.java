@@ -66,6 +66,6 @@ public class PriceControllerTest {
                                 .param("product_id", productId.toString())
                                 .param("chain_id", chainId.toString())
                                 .contentType(MediaType.APPLICATION_JSON)
-                ).andExpect(status().is(404));
+                ).andExpect(status().is(400));
     }
 }
